@@ -4,84 +4,258 @@
       <title>Golf Tac Toe</title>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href='https://fonts.googleapis.com/css?family=Oswald:700,400' rel='stylesheet' type='text/css'>
     </head>
 
     <body class="container-fluid">
+      <div class="logo">
+        <img src="http://i.imgur.com/jCPQa08.png?1" alt="Logo">
+      </div>
       <div id = "signed-out">
-      <form id="sign-in">
-        <fieldset>
-          <legend>Sign In</legend>
-          <input type="email" name="credentials[email]" id="signin-email" placeholder="Your Email">
-          <input type="password" name="credentials[password]" id="signin-password" placeholder="Set Password">
-          <input type="submit" name="submit" value="Sign In">
-        </fieldset>
-      </form>
-      <br />
-      <form id="sign-up" style="text-align:center;">
-        <fieldset>
-          <legend>Create Account</legend>
 
-          <input type="email" name="credentials[email]"
-          id="signup-email" placeholder="Your Email"><br /><br />
-
-          <input type="password" name="credentials[password]"
-          id="signup-password" placeholder="Set Password"><br /><br />
-
-          <input type="password" name="credentials[password_confirmation]"
-          id="signup-password-confirmation" placeholder="Confirm Password"><br /><br />
-
-          <input type="submit" name="submit" value="Create Account">
-
-        </fieldset>
-      </form>
+<!-- Sign In Button -->
+        <div class="container">
+        	<div class="row">
+                <p class="text-center">
+                  <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+                  data-target="#signin-modal">
+                   <span style="font-weight: bold; font-size: 28px">Sign In</span>
+                  </a>
+<!-- Sign Up Button -->
+                   <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+                   data-target="#signup-modal">
+                      <span style="font-weight: bold; font-size: 28px">Sign Up</span>
+                  </a>
+                </p>
+           </div>
       </div>
 
-      <div id = "signed-in">
-      <br />
-      <form id="sign-out">
+<!-- Sign In Modal -->
+      <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in">
+                <fieldset>
+                  <input type="email" name="credentials[email]" id="signin-email" placeholder="Your Email">
+                  <input type="password" name="credentials[password]" id="signin-password" placeholder="Set Password">
+                  <input type="submit" name="submit" value="Sign In">
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Sign Up Modal -->
+      <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up" style="text-align:center;">
+                <fieldset>
+                  <legend>Create Account</legend>
+
+                  <input type="email" name="credentials[email]"
+                  id="signup-email" placeholder="Your Email"><br /><br />
+
+                  <input type="password" name="credentials[password]"
+                  id="signup-password" placeholder="Set Password"><br /><br />
+
+                  <input type="password" name="credentials[password_confirmation]"
+                  id="signup-password-confirmation" placeholder="Confirm Password"><br /><br />
+
+                  <input type="submit" name="submit" value="Create Account">
+
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div id = "signed-in">
+    <div id="account">
+<!-- Sign Out Button -->
+        <div class="container">
+
+            <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+            data-target="#signout-modal">
+             <span style="font-weight: bold; font-size: 16px">Sign Out</span>
+           </a>
+
+<!-- Change Password Button -->
+
+           <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+           data-target="#password-modal">
+              <span style="font-weight: bold; font-size: 16px">Change Password</span>
+          </a>
+
+      </div>
+    </div>
+<!-- Sign Out Modal -->
+    <div class="modal fade" id="signout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Sign Out</h4>
+            </div>
+            <div class="modal-body">
+                <form id="sign-out">
+                  <fieldset>
+                    <input type="submit" name="submit" value="Sign Out">
+                  </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Change Password Modal -->
+
+      <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+            </div>
+            <div class="modal-body">
+              <form id="change-password" style="text-align:center;">
+                <fieldset>
+
+                  <input type="password" name="passwords[old]"
+                  placeholder="Old Password"><br /><br />
+
+                  <input type="password" name="passwords[new]"
+                  placeholder="New Password"><br /><br />
+
+                  <input type="submit" name="submit" value="Change Password">
+
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--Create A Game-->
+      <form id="create-game">
         <fieldset>
-          <input type="submit" name="submit" value="Sign Out">
+          <p class="text-center">
+          <button type="button" class="btn btn-default btn-lg">
+            <span style="font-weight: bold; font-size: 36px; margin-top: 10px">Start A New Game</span>
+          </button>
+        </p>
         </fieldset>
       </form>
-      <br />
-      <form id="change-password" style="text-align:center;">
-        <fieldset>
-          <legend>Change Password</legend>
+        </div>
 
-
-          <input type="password" name="passwords[old]"
-          placeholder="Old Password"><br /><br />
-
-          <input type="password" name="passwords[new]"
-          placeholder="New Password"><br /><br />
-
-          <input type="submit" name="submit" value="Change Password">
-
-        </fieldset>
-      </form>
+<!--View Games
       <form id="view-games">
         <fieldset>
           <legend>View Games</legend>
           <input type="submit" name="submit" value="View Games">
         </fieldset>
       </form>
-    </div>
+      -->
 
-    <!--TicTacToe Table-->
-    <section class="row-eq-height">
-      <article>SQUARE</article>
-      <article>SQUARE  </article>
-      <article>SQUARE</article>
-    </section>
-    <section class="row-eq-height">
-      <article>SQUARE</article>
-      <article>SQUARE</article>
-      <article>SQUARE</article>
-    </section>
-    <section class="row-eq-height">
-      <article>SQUARE</article>
-      <article>SQUARE</article>
-      <article>SQUARE</article>
-    </section>
+          <!--TicTacToe Table-->
+    <div class = "x-wins">
+      <h2 class="text-center">
+        White Wins!<br />
+    <img src = "/assets/images/whitegolfball.png" alt = "Pink Ball Wins!">
+  </h2>
+   </div>
+   <div class = "o-wins">
+     <h2 class="text-center">
+       Pink Wins!<br />
+   <img src = "/assets/images/pinkgolfball.png" alt = "Pink Ball Wins!">
+ </h2>
+  </div>
+  <div class = "tie">
+    <h2 class="text-center">
+      Its a Tie!<br />
+  <img src = "/assets/images/tiegolfballs.png" alt = "Pink Ball Wins!">
+</h2>
+ </div>
+    <div class="board">
+        <section>
+                <div id="0">
+                <div class="emptySquare">
+                <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+                </div>
+               </div>
+               <div id="1">
+               <div class="emptySquare">
+               <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+               </div>
+              </div>
+              <div id="2">
+              <div class="emptySquare">
+              <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+              </div>
+             </div>
+          </section>
+          <section>
+              <div id="3">
+              <div class="emptySquare">
+              <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+              </div>
+             </div>
+             <div id="4">
+             <div class="emptySquare">
+             <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+             </div>
+            </div>
+            <div id="5">
+            <div class="emptySquare">
+            <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+            </div>
+           </div>
+          </section>
+          <section>
+              <div id="6">
+              <div class="emptySquare">
+              <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+              </div>
+             </div>
+             <div id="7">
+             <div class="emptySquare">
+             <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+             </div>
+            </div>
+            <div id="8">
+            <div class="emptySquare">
+            <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
+            </div>
+           </div>
+         </section>
+  </div>
+
+
+
     </body>
 </html>

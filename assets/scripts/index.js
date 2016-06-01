@@ -6,5 +6,4 @@ const events = require('./gamescripts/events.js');
 $(() => {
   events.addHandlers();
   events.signInOrOut();
-
 });

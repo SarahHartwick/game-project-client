@@ -48,10 +48,34 @@ const showGames = () => {
     },
   });
 };
+
+const createGame = () => {
+  return $.ajax({
+    url: app.host + '/games/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+const playSquare = (data) => {
+  return $.ajax({
+    url: app.host + '/games/' + app.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data,
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   showGames,
+  createGame,
+  playSquare,
 };
