@@ -1,10 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/';
+$pure-white: #fff;
 
 body {
   background-image: url('http://i.imgur.com/2jDURcW.jpg');
-  padding: 45px;
   font-family: 'Oswald', sans-serif;
+  padding: 45px;
 }
 
 section {
@@ -12,53 +13,79 @@ section {
   padding: 15px;
   }
 
-.emptySquare:hover {
-  opacity: .85;
+.empty-square:hover {
   filter: alpha(opacity = 85);
+  opacity: .85;
   }
 
 .board {
+  background-color: $pure-white;
   -webkit-border-radius: 20px;
   border-radius: 20px;
-  background-color: #fff;
-  max-width: 650px;
   margin: 15px auto;
+  max-width: 650px;
 }
 
 .logo {
-  text-align: center;
   margin: 40px auto;
+  text-align: center;
 }
 
 #account {
-  position: absolute;
-  top: 30px;
   left: 10px;
-}
-#rules {
   position: absolute;
   top: 30px;
-  right: 10px;
 }
 
-.x-wins img{
-  max-width: 200px;
+#rules {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+}
+
+.scoreboard {
+  position: absolute;
+  right: 10px;
+  top: 90px;
+}
+
+.games-total {
+  position: absolute;
+  left: 10px;
+  top: 90px;
+}
+
+.x-wins img {
   margin: 0 auto;
-}
-.o-wins img{
   max-width: 200px;
-  margin: 0 auto;
 }
-.tie img{
+
+.o-wins img {
+  margin: 0 auto;
   max-width: 200px;
+}
+
+.tie img {
   margin: 0 auto;
+  max-width: 200px;
 }
-.x-wins h2{
-  color: #fff;
+
+.x-wins h2 {
+  color: $pure-white;
 }
-.o-wins h2{
-  color: #fff;
+
+.o-wins h2 {
+  color: $pure-white;
 }
-.tie h2{
-  color: #fff;
+
+.tie h2 {
+  color: $pure-white;
+}
+
+@media (max-width: 700px) {
+  .logo img {
+    margin: 105px auto 0;
+    max-width: 250px;
+    text-align: center;
+  }
 }

@@ -59,16 +59,40 @@ const createGame = () => {
   });
 };
 
-const playSquare = (data) => {
+const playSquare = () => {
   return $.ajax({
-    url: app.host + '/games/' + app.id,
+    url: app.host + '/games/' + app.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data,
-  });
-};
+    data: {
+            "game": {
+              "cell": {
+                  "index": app.game.index,
+                  "value": app.game.value,
+          },
+          "over": app.over,
+        }
+      }
+    });
+  };
+
+  const gameOver = () => {
+    return $.ajax({
+      url: app.host + '/games/' + app.game.id,
+      method: 'PATCH',
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+      data: {
+              "game": {
+              "over": true,
+          }
+        }
+      });
+    };
+
 
 module.exports = {
   signUp,
@@ -78,4 +102,5 @@ module.exports = {
   showGames,
   createGame,
   playSquare,
+  gameOver,
 };

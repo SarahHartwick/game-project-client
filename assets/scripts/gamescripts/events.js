@@ -52,7 +52,7 @@ let cellsFull = 0;
 const playSquare = (event) => {
   event.preventDefault();
   let id = $(event.target).parents().parents().attr("id");
-
+  app.game.index = id;
   cellsFull += 1;
     if(cellsFull % 2 === 0) {
     currentGame[id] = 'x';
@@ -63,15 +63,21 @@ const playSquare = (event) => {
     $('#' + id).empty();
     $('#' + id).html('<img src="http://i.imgur.com/PEbgFBN.jpg?1" alt="Golf Hole" class="col-xs-4">');
   }
+
+  app.game.value = currentGame[id];
+
   $('#' + id).off('click', playSquare);
   gamelogic.logic(currentGame);
   console.log(currentGame);
+  api.playSquare()
+  .done(ui.playSuccess)
+  .fail(ui.failure);
 };
 
 
 const createGame = (event) => {
   event.preventDefault();
-  $('#0, #1, #2, #3, #4, #5, #6, #7, #8').html("<div class='emptySquare'><img src='http://i.imgur.com/75hOFrS.jpg' alt='Golf Hole' class='col-xs-4'></div>");
+  $('#0, #1, #2, #3, #4, #5, #6, #7, #8').html("<div class='empty-square'><img src='http://i.imgur.com/75hOFrS.jpg' alt='Golf Hole' class='col-xs-4'></div>");
   $('#0, #1, #2, #3, #4, #5, #6, #7, #8').on('click', playSquare);
   api.createGame()
   .done(ui.gameCreated)
@@ -91,7 +97,12 @@ const onGames = (event) => {
 
 };
 
-
+const getTotalGames = (event) => {
+  event.preventDefault();
+  api.showGames()
+  .done(ui.showGames)
+  .fail(ui.failure);
+}
 //jQuery Events
 
 const addHandlers = () => {
@@ -101,10 +112,13 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#view-games').on('submit', onGames);
   $('.board').hide();
+  $('.scoreboard').hide();
   $('#create-game').on('click', createGame);
   $('.x-wins').hide();
   $('.o-wins').hide();
   $('.tie').hide();
+  $('.logo').on('click', onGames);
+  $('#total-games').on('click', getTotalGames);
 };
 
 const signInOrOut = () => {
@@ -129,4 +143,5 @@ module.exports = {
   playSquare,
   onSignIn,
   cellsFull,
+  getTotalGames,
 };

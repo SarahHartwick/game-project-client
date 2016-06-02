@@ -93,32 +93,73 @@
   <div id = "signed-in">
 
 <!-- Rules Button -->
-  <div id="rules">
-    <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
-     data-target="#rules-modal">
-     <span class="glyphicon glyphicon-th" aria-hidden="true"></span> Game Rules
-    </a>
-   </div>
+<div id="rules">
+  <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+   data-target="#rules-modal">
+   <span class="glyphicon glyphicon-th" aria-hidden="true"></span> Game Rules
+  </a>
+ </div>
 
    <!-- Rules Modal -->
-       <div class="modal fade" id="rules-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-           <div class="modal-dialog" role="document">
-             <div class="modal-content">
-               <div class="modal-header">
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                 <h4 class="modal-title" id="myModalLabel">Sign Out</h4>
-               </div>
-               <div class="modal-body">
-
-
-               </div>
-               <div class="modal-footer">
-                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-               </div>
-             </div>
+   <div class="modal fade" id="rules-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Sign Out</h4>
            </div>
-         </div>
+           <div class="modal-body">
+                <ul>
+                  <li><h4>When it is your turn, click on an empty Golf Hole in the grid to play that Hole.</h4></li>
+                  <li><h4>The game ends when one player gets three Holes in a row (horizontally, vertically or diagonally.)</h4></li>
+                  <li><h4>If all Holes in the grid have been played and there is no winner, a tie is declared.</h4></li>
+                  <li><h4>If you win in 3 plays you get a <span style="color:#3C6E30; font-weight:bold">Birdie</span>,
+                          if you win in 4 plays you get a <span style="color:#3C6E30; font-weight:bold">Par</span>,
+                          and if you win in 5 plays you get a <span style="color:#3C6E30; font-weight:bold">Bogie</span>!</h4></li>
+                </ul>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
+<!-- ScoreBoard-->
+<div class = "scoreboard">
+  <div class="panel panel-default">
+  <div class="panel-heading"><span class="glyphicon glyphicon-flag">
+  </span> <span style="font-size: 18px">Scoreboard</span></div>
+  <table class="table">
+    <tr>
+        <td>White</td>
+        <td id = "xwins">0</td>
+    </tr>
+    <tr>
+        <td>Pink</td>
+        <td id = "owins">0</td>
+    </tr>
+    <tr>
+        <td>Tie</td>
+        <td id = "ties">0</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<!-- User Game Total-->
+<div class = "games-total">
+  <div class="panel panel-default">
+  <div class="panel-heading"><span class="glyphicon glyphicon-flag">
+  </span> <span style="font-size: 18px">Total Games Played</span></div>
+  <table class="table">
+    <tr>
+        <td id ="username">User</td>
+        <td id = "total-games"><a href="#">Click to View</a></td>
+    </tr>
+  </table>
+</div>
+</div>
 
 <!-- Sign Out Button -->
   <div id="account">
@@ -126,14 +167,14 @@
 
             <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
             data-target="#signout-modal">
-             <span style="font-weight: bold; font-size: 16px">Sign Out</span>
+             <span style="font-size: 16px">Sign Out</span>
            </a>
 
 <!-- Change Password Button -->
 
            <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
            data-target="#password-modal">
-              <span style="font-weight: bold; font-size: 16px">Account</span>
+              <span style="font-size: 16px">Account</span>
           </a>
 
       </div>
@@ -233,51 +274,51 @@
     <div class="board">
         <section>
                 <div id="0">
-                <div class="emptySquare">
+                <div class="empty-square">
                 <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
                 </div>
                </div>
                <div id="1">
-               <div class="emptySquare">
+               <div class="empty-square">
                <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
                </div>
               </div>
               <div id="2">
-              <div class="emptySquare">
+              <div class="empty-square">
               <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
               </div>
              </div>
           </section>
           <section>
               <div id="3">
-              <div class="emptySquare">
+              <div class="empty-square">
               <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
               </div>
              </div>
              <div id="4">
-             <div class="emptySquare">
+             <div class="empty-square">
              <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
              </div>
             </div>
             <div id="5">
-            <div class="emptySquare">
+            <div class="empty-square">
             <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
             </div>
            </div>
           </section>
           <section>
               <div id="6">
-              <div class="emptySquare">
+              <div class="empty-square">
               <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
               </div>
              </div>
              <div id="7">
-             <div class="emptySquare">
+             <div class="empty-square">
              <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
              </div>
             </div>
             <div id="8">
-            <div class="emptySquare">
+            <div class="empty-square">
             <img src="http://i.imgur.com/75hOFrS.jpg" alt="Golf Hole" class="col-xs-4">
             </div>
            </div>
