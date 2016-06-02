@@ -6,7 +6,7 @@ const api = require('./api');
 const ui = require('./ui');
 const events = require('./events');
 const gamelogic = require('./gamelogic');
-let currentGame = [];
+let currentGame = require('./gamedata.js');
 
 //Sign In/Up/Out/Password Event Handlers
 
@@ -14,7 +14,7 @@ const onSignUp = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signUp(data)
-  .done(ui.signInSuccess)
+  .done(ui.signUpSuccess)
   .fail(ui.signUpFailure);
 
 };
@@ -79,6 +79,7 @@ const createGame = (event) => {
   for (let i = 0; i <= 9; i++) {
     currentGame.pop();
   }
+  cellsFull = 0;
 
 };
 
@@ -127,4 +128,5 @@ module.exports = {
   onGames,
   playSquare,
   onSignIn,
+  cellsFull,
 };

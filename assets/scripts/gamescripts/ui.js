@@ -15,6 +15,18 @@ const signUpFailure = () => {
   $('#sign-up').append("Passwords don't match. Try Again.");
 };
 
+const signUpSuccess = function(data){
+  $('#signin-email').val($('#signup-email').val());
+  $('#signin-password').val($('#signup-password').val());
+  $('#sign-in').submit();
+  app.user = data.user;
+  $('#signin-modal').modal('hide');
+  $('#signup-modal').modal('hide');
+  $('#signed-out').hide();
+  $('#signed-in').show();
+  $('#create-game').show();
+};
+
 const signInSuccess = (data) => {
   app.user = data.user;
   $('#signin-modal').modal('hide');
@@ -62,6 +74,7 @@ const showGameList = (data) => {
 module.exports = {
   failure,
   signInSuccess,
+  signUpSuccess,
   signOutSuccess,
   changePasswordSuccess,
   changePasswordFailure,

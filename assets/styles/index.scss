@@ -27,13 +27,18 @@ section {
 
 .logo {
   text-align: center;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 #account {
   position: absolute;
   top: 30px;
   left: 10px;
+}
+#rules {
+  position: absolute;
+  top: 30px;
+  right: 10px;
 }
 
 .x-wins img{
