@@ -47,7 +47,7 @@ section {
 .scoreboard {
   position: absolute;
   right: 10px;
-  top: 30px;
+  top: 50px;
 }
 
 .games-total {
@@ -83,10 +83,13 @@ section {
   color: $pure-white;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .logo img {
-    margin: 105px auto 0;
-    max-width: 250px;
+    margin: 135px auto 0;
+    max-width: 200px;
     text-align: center;
+  }
+  .scoreboard {
+    top: 55px;
   }
 }
