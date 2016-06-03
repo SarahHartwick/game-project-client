@@ -255,7 +255,7 @@ webpackJsonp([0],[
 /* 5 */
 /***/ function(module, exports) {
 
-	
+
 	'use strict';
 
 	var app = {
@@ -825,7 +825,7 @@ webpackJsonp([0],[
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "448c34a56d699c29117adc64c43affeb.woff2";
+	// module.exports = __webpack_require__.p + "448c34a56d699c29117adc64c43affeb.woff2";
 
 /***/ },
 /* 15 */
@@ -837,7 +837,7 @@ webpackJsonp([0],[
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e18bbf611f2a2e43afc071aa2f4e1512.ttf";
+	// module.exports = __webpack_require__.p + "e18bbf611f2a2e43afc071aa2f4e1512.ttf";
 
 /***/ },
 /* 17 */
