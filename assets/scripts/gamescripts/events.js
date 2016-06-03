@@ -34,6 +34,7 @@ const onSignOut = (event) => {
   .done(ui.signOutSuccess)
   .fail(ui.failure);
   $('#0, #1, #2, #3, #4, #5, #6, #7, #8').off('click', events.playSquare);
+  $('#total-games').empty();
 
 };
 
@@ -47,6 +48,11 @@ const onChangePassword = (event) => {
 };
 
 //Game Event Handlers
+
+
+
+let gameNumber = 0;
+
 let cellsFull = 0;
 
 const playSquare = (event) => {
@@ -54,6 +60,7 @@ const playSquare = (event) => {
   let id = $(event.target).parents().parents().attr("id");
   app.game.index = id;
   cellsFull += 1;
+  if(gameNumber % 2 === 0){
     if(cellsFull % 2 === 0) {
     currentGame[id] = 'x';
     $('#' + id).empty();
@@ -63,17 +70,25 @@ const playSquare = (event) => {
     $('#' + id).empty();
     $('#' + id).html('<img src="http://i.imgur.com/PEbgFBN.jpg?1" alt="Golf Hole" class="col-xs-4">');
   }
-
+}  else {
+    if(cellsFull % 2 === 0) {
+    currentGame[id] = 'o';
+    $('#' + id).empty();
+    $('#' + id).html('<img src="http://i.imgur.com/PEbgFBN.jpg?1" alt="Golf Hole" class="col-xs-4">');
+  } else {
+    currentGame[id] = 'x';
+    $('#' + id).empty();
+    $('#' + id).html('<img src="http://i.imgur.com/ymGz64S.jpg" alt="Golf Hole" class="col-xs-4">');
+  }
+}
   app.game.value = currentGame[id];
 
   $('#' + id).off('click', playSquare);
   gamelogic.logic(currentGame);
-  console.log(currentGame);
   api.playSquare()
   .done(ui.playSuccess)
   .fail(ui.failure);
 };
-
 
 const createGame = (event) => {
   event.preventDefault();
@@ -86,7 +101,10 @@ const createGame = (event) => {
     currentGame.pop();
   }
   cellsFull = 0;
-
+  api.showGames()
+  .done(ui.showGames)
+  .fail(ui.failure);
+  gameNumber += 1;
 };
 
 const onGames = (event) => {
@@ -97,12 +115,8 @@ const onGames = (event) => {
 
 };
 
-const getTotalGames = (event) => {
-  event.preventDefault();
-  api.showGames()
-  .done(ui.showGames)
-  .fail(ui.failure);
-}
+
+
 //jQuery Events
 
 const addHandlers = () => {
@@ -113,12 +127,12 @@ const addHandlers = () => {
   $('#view-games').on('submit', onGames);
   $('.board').hide();
   $('.scoreboard').hide();
+  $('.games-total').hide();
   $('#create-game').on('click', createGame);
   $('.x-wins').hide();
   $('.o-wins').hide();
   $('.tie').hide();
-  $('.logo').on('click', onGames);
-  $('#total-games').on('click', getTotalGames);
+  gamelogic.emptyScore();
 };
 
 const signInOrOut = () => {
@@ -143,5 +157,4 @@ module.exports = {
   playSquare,
   onSignIn,
   cellsFull,
-  getTotalGames,
 };

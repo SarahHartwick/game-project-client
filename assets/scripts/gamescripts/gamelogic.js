@@ -19,6 +19,18 @@ let xWins = 0;
 let oWins = 0;
 let ties = 0;
 
+const emptyScore = () => {
+  xWins = 0;
+  oWins = 0;
+  ties = 0;
+  $('#xwins').html('0');
+  $('#owins').html('0');
+  $('#ties').html('0');
+}
+$('#sign-out').on('click', emptyScore);
+
+
+
 const logic = function(gameArray) {
   if (gameArray[0] !== undefined && gameArray[0] === gameArray[1]
     && gameArray[1] === gameArray[2]) {
@@ -162,10 +174,13 @@ const logic = function(gameArray) {
   $('#0, #1, #2, #3, #4, #5, #6, #7, #8').off('click', events.playSquare);
   $('.tie').show().delay(1200).fadeOut(900);
   api.gameOver().done(ui.gameOver).fail(ui.failure);
+  ties += 1;
+  $('#ties').html(ties);
 
   }
 };
 
 module.exports = {
   logic,
+  emptyScore,
 };

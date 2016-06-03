@@ -67,11 +67,6 @@ const gameCreated = (data) => {
 
 };
 
-const showGameList = (data) => {
-  console.log(data);
-
-};
-
 const playSuccess = (data) => {
   console.log(data);
 
@@ -84,7 +79,8 @@ const gameOver = (data) => {
 
 const showGames = (data) => {
   let totalGames = data.games.length;
-  $('#total-games').html('You have played ' + totalGames + ' games!');
+  $('#total-games').html('This is game #' + (totalGames + 1) + ' for you!');
+  $('.games-total').show();
 };
 
 
@@ -101,7 +97,6 @@ module.exports = {
   changePasswordFailure,
   signInFailure,
   signUpFailure,
-  showGameList,
   gameCreated,
   playSuccess,
   gameOver,

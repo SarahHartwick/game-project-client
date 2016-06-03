@@ -87,10 +87,6 @@
           </div>
         </div>
       </div>
-  </div>
-
-
-  <div id = "signed-in">
 
 <!-- Rules Button -->
 <div id="rules">
@@ -100,30 +96,36 @@
   </a>
  </div>
 
-   <!-- Rules Modal -->
-   <div class="modal fade" id="rules-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-       <div class="modal-dialog" role="document">
-         <div class="modal-content">
-           <div class="modal-header">
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-             <h4 class="modal-title" id="myModalLabel">Sign Out</h4>
-           </div>
-           <div class="modal-body">
-                <ul>
-                  <li><h4>When it is your turn, click on an empty Golf Hole in the grid to play that Hole.</h4></li>
-                  <li><h4>The game ends when one player gets three Holes in a row (horizontally, vertically or diagonally.)</h4></li>
-                  <li><h4>If all Holes in the grid have been played and there is no winner, a tie is declared.</h4></li>
-                  <li><h4>If you win in 3 plays you get a <span style="color:#3C6E30; font-weight:bold">Birdie</span>,
-                          if you win in 4 plays you get a <span style="color:#3C6E30; font-weight:bold">Par</span>,
-                          and if you win in 5 plays you get a <span style="color:#3C6E30; font-weight:bold">Bogie</span>!</h4></li>
-                </ul>
-            </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
+ <!-- Rules Modal -->
+ <div class="modal fade" id="rules-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Sign Out</h4>
+         </div>
+         <div class="modal-body">
+              <ul>
+                <li><h4>When it is your turn, click on an empty Golf Hole in the grid to play that Hole.</h4></li>
+                <li><h4>The game ends when one player gets three Holes in a row (horizontally, vertically or diagonally.)</h4></li>
+                <li><h4>If all Holes in the grid have been played and there is no winner, a tie is declared.</h4></li>
+                <li><h4>If you win in 3 plays you get a <span style="color:#3C6E30; font-weight:bold">Birdie</span>,
+                        if you win in 4 plays you get a <span style="color:#3C6E30; font-weight:bold">Par</span>,
+                        and if you win in 5 plays you get a <span style="color:#3C6E30; font-weight:bold">Bogie</span>!</h4></li>
+              </ul>
+          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
+      </div>
+</div>
+
+
+  <div id = "signed-in">
+
+
 
 <!-- ScoreBoard-->
 <div class = "scoreboard">
@@ -154,8 +156,7 @@
   </span> <span style="font-size: 18px">Total Games Played</span></div>
   <table class="table">
     <tr>
-        <td id ="username">User</td>
-        <td id = "total-games"><a href="#">Click to View</a></td>
+        <td id = "total-games"></td>
     </tr>
   </table>
 </div>
