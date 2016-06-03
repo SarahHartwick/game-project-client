@@ -35,6 +35,7 @@ const onSignOut = (event) => {
   .fail(ui.failure);
   $('#0, #1, #2, #3, #4, #5, #6, #7, #8').off('click', events.playSquare);
   $('#total-games').empty();
+  $('#game-stats').hide();
 
 };
 
