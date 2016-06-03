@@ -134,12 +134,35 @@ const showStats = (data) => {
   else {
     player = "Tie Game!"
   }
-  if (player === 'x') {
-    player = 'White Ball Won!';
+  let xPlays = 0;
+  let oPlays = 0;
+  for (let i = 0; i < lastGame.cells.length; i++) {
+    if (lastGame.cells[i] === 'x') {
+      xPlays += 1;
+    }
+    if (lastGame.cells[i] === 'o') {
+      oPlays += 1;
+    };
   }
-  else if(player === "o") {
-    player = "Pink Ball Won!";
+  if (player === 'x' && xPlays === 3) {
+    player = 'White Ball Won with a Birdie!';
+  }
+  else if (player === 'x' && xPlays === 4) {
+    player = 'White Ball Won with a Par!';
+  }
+  else if (player === 'x' && xPlays === 5) {
+    player = 'White Ball Won with a Bogie!';
+  }
+  else if(player === "o" && oPlays === 3) {
+    player = "Pink Ball Won with a Birdie!";
+  }
+  else if(player === "o" && oPlays === 4) {
+    player = "Pink Ball Won with a Par!";
+  }
+  else if(player === "o" && oPlays === 5) {
+    player = "Pink Ball Won with a Bogie!";
   };
+
   $('#stats-modal').html(player);
 };
 
