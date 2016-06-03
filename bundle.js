@@ -829,9 +829,9 @@ webpackJsonp([0],[
 
 /***/ },
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = __webpack_require__.p + "fa2772327f55d8198301fdb8bcfc8158.woff";
+	module.exports = "data:application/font-woff;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICJmYTI3NzIzMjdmNTVkODE5ODMwMWZkYjhiY2ZjODE1OC53b2ZmIjs="
 
 /***/ },
 /* 16 */
