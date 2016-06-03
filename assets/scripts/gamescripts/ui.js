@@ -171,7 +171,6 @@ const showGames = (data) => {
   let totalGames = data.games.length;
   $('#total-games').html('This is game #' + (totalGames + 1) + ' for ' + app.user.email + '!');
   $('.games-total').show();
-
   $('#game-stats').show();
 };
 
