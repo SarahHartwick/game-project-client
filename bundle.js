@@ -129,7 +129,7 @@ webpackJsonp([0],[
 	    currentGame.pop();
 	  }
 	  cellsFull = 0;
-	  api.showGames().done(ui.showGames).fail(ui.failure);
+	  api.showGames().done(ui.showGames).done(ui.showWins).fail(ui.failure);
 	  gameNumber += 1;
 	};
 
@@ -255,7 +255,7 @@ webpackJsonp([0],[
 /* 5 */
 /***/ function(module, exports) {
 
-
+	
 	'use strict';
 
 	var app = {
@@ -461,6 +461,30 @@ webpackJsonp([0],[
 	  console.log(data);
 	};
 
+	var showWins = function showWins(data) {
+	  var totalWins = 0;
+	  for (var i = 0; i < data.games.length; i++) {
+	    if (data.games[i].cells[0] === 'x' && data.games[i].cells[1] === 'x' && data.games[i].cells[2] === 'x') {
+	      totalWins += 1;
+	    } else if (data.games[i].cells[0] === 'x' && data.games[i].cells[3] === 'x' && data.games[i].cells[6] === 'x') {
+	      totalWins += 1;
+	    } else if (data.games[i].cells[0] === 'x' && data.games[i].cells[4] === 'x' && data.games[i].cells[8] === 'x') {
+	      totalWins += 1;
+	    } else if (data.games[i].cells[2] === 'x' && data.games[i].cells[5] === 'x' && data.games[i].cells[8] === 'x') {
+	      totalWins += 1;
+	    } else if (data.games[i].cells[2] === 'x' && data.games[i].cells[4] === 'x' && data.games[i].cells[6] === 'x') {
+	      totalWins += 1;
+	    } else if (data.games[i].cells[1] === 'x' && data.games[i].cells[4] === 'x' && data.games[i].cells[7] === 'x') {
+	      totalWins += 1;
+	    } else if (data.games[i].cells[3] === 'x' && data.games[i].cells[4] === 'x' && data.games[i].cells[5] === 'x') {
+	      totalWins += 1;
+	    } else if (data.games[i].cells[6] === 'x' && data.games[i].cells[7] === 'x' && data.games[i].cells[8] === 'x') {
+	      totalWins += 1;
+	    }
+	  }
+	  $('#total-wins').html('You have won ' + totalWins + ' games!');
+	};
+
 	var showStats = function showStats(data) {
 	  var player = '';
 	  var result = 0;
@@ -516,14 +540,13 @@ webpackJsonp([0],[
 	    player = "Pink Ball Won with a Bogie!";
 	  };
 
-	  $('#stats-modal').html(player);
+	  $('#stats-modal').html('<h3><center>' + player + '</center></h3>');
 	};
 
 	var showGames = function showGames(data) {
 	  var totalGames = data.games.length;
-	  $('#total-games').html('This is game #' + (totalGames + 1) + ' for you!');
+	  $('#total-games').html('This is game #' + (totalGames + 1) + ' for ' + app.user.email + '!');
 	  $('.games-total').show();
-
 	  $('#game-stats').show();
 	};
 
@@ -540,7 +563,8 @@ webpackJsonp([0],[
 	  playSuccess: playSuccess,
 	  gameOver: gameOver,
 	  showGames: showGames,
-	  showStats: showStats
+	  showStats: showStats,
+	  showWins: showWins
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
@@ -837,7 +861,7 @@ webpackJsonp([0],[
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
- module.exports = __webpack_require__.p + "e18bbf611f2a2e43afc071aa2f4e1512.ttf";
+	module.exports = __webpack_require__.p + "e18bbf611f2a2e43afc071aa2f4e1512.ttf";
 
 /***/ },
 /* 17 */
