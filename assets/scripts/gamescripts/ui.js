@@ -163,13 +163,13 @@ const showStats = (data) => {
     player = "Pink Ball Won with a Bogie!";
   };
 
-  $('#stats-modal').html(player);
+  $('#stats-modal').html('<h3><center>' + player + '</center></h3>');
 };
 
 
 const showGames = (data) => {
   let totalGames = data.games.length;
-  $('#total-games').html('This is game #' + (totalGames + 1) + ' for you!');
+  $('#total-games').html('This is game #' + (totalGames + 1) + ' for ' + app.user.email + '!');
   $('.games-total').show();
 
   $('#game-stats').show();
