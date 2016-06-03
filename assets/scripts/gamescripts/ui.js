@@ -13,7 +13,7 @@ const signInFailure = () => {
 };
 
 const signUpFailure = () => {
-  $('#sign-up').append("Passwords don't match. Try Again.");
+  $('#sign-up').append("Passwords don't match or this username already exists. Try Again.");
 };
 
 const signUpSuccess = function(data){
@@ -112,7 +112,7 @@ const showWins = (data) => {
       totalWins += 1;
     }
 }
-  $('#total-wins').html('You have won ' + totalWins + ' games!');
+  $('#total-wins').html(app.user.email + ' has won ' + totalWins + ' games!');
 }
 
 const showStats = (data) => {
@@ -184,22 +184,22 @@ const showStats = (data) => {
     };
   }
   if (player === 'x' && xPlays === 3) {
-    player = 'White Ball Won with a Birdie!';
+    player = 'You Won with a Birdie!';
   }
   else if (player === 'x' && xPlays === 4) {
-    player = 'White Ball Won with a Par!';
+    player = 'You Won with a Par!';
   }
   else if (player === 'x' && xPlays === 5) {
-    player = 'White Ball Won with a Bogie!';
+    player = 'You Won with a Bogie!';
   }
   else if(player === "o" && oPlays === 3) {
-    player = "Pink Ball Won with a Birdie!";
+    player = "Pink Won with a Birdie!";
   }
   else if(player === "o" && oPlays === 4) {
-    player = "Pink Ball Won with a Par!";
+    player = "Pink Won with a Par!";
   }
   else if(player === "o" && oPlays === 5) {
-    player = "Pink Ball Won with a Bogie!";
+    player = "Pink Won with a Bogie!";
   };
 
   $('#stats-modal').html('<h3><center>' + player + '</center></h3>');

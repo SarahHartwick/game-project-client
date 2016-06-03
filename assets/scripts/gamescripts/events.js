@@ -36,6 +36,7 @@ const onSignOut = (event) => {
   $('#0, #1, #2, #3, #4, #5, #6, #7, #8').off('click', events.playSquare);
   $('#total-games').empty();
   $('#game-stats').hide();
+  $('#total-wins').empty();
 
 };
 
@@ -109,10 +110,9 @@ const createGame = (event) => {
   gameNumber += 1;
 };
 
-const onGames = (event) => {
-  event.preventDefault();
+const onGames = () => {
   api.showGames()
-  .done(ui.showGameList)
+  .done(ui.showWins)
   .fail(ui.failure);
 
 };
