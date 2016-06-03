@@ -104,6 +104,7 @@ const createGame = (event) => {
   cellsFull = 0;
   api.showGames()
   .done(ui.showGames)
+  .done(ui.showWins)
   .fail(ui.failure);
   gameNumber += 1;
 };

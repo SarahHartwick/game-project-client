@@ -76,6 +76,45 @@ const gameOver = (data) => {
   console.log(data);
 };
 
+const showWins = (data) => {
+  let totalWins = 0;
+  for (let i = 0; i < data.games.length; i++) {
+  if (data.games[i].cells[0] === 'x' && data.games[i].cells[1] === 'x'
+    && data.games[i].cells[2] === 'x'){
+      totalWins += 1;
+    }
+  else if (data.games[i].cells[0] === 'x' && data.games[i].cells[3] === 'x'
+    && data.games[i].cells[6] === 'x'){
+      totalWins += 1;
+    }
+  else if (data.games[i].cells[0] === 'x' && data.games[i].cells[4] === 'x'
+    && data.games[i].cells[8] === 'x'){
+      totalWins += 1;
+    }
+  else if (data.games[i].cells[2] === 'x' && data.games[i].cells[5] === 'x'
+    && data.games[i].cells[8] === 'x'){
+      totalWins += 1;
+    }
+  else if (data.games[i].cells[2] === 'x' && data.games[i].cells[4] === 'x'
+    && data.games[i].cells[6] === 'x'){
+      totalWins += 1;
+    }
+  else if (data.games[i].cells[1] === 'x' && data.games[i].cells[4] === 'x'
+    && data.games[i].cells[7] === 'x'){
+      totalWins += 1;
+    }
+  else if (data.games[i].cells[3] === 'x' && data.games[i].cells[4] === 'x'
+    && data.games[i].cells[5] === 'x'){
+      totalWins += 1;
+    }
+  else if (data.games[i].cells[6] === 'x' && data.games[i].cells[7] === 'x'
+    && data.games[i].cells[8] === 'x'){
+      totalWins += 1;
+    }
+}
+  $('#total-wins').html('You have won ' + totalWins + ' games!');
+}
+
 const showStats = (data) => {
   let player = '';
   let result = 0;
@@ -193,4 +232,5 @@ module.exports = {
   gameOver,
   showGames,
   showStats,
+  showWins,
 };
