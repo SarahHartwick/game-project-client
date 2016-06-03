@@ -244,15 +244,6 @@
       </form>
         </div>
 
-<!--View Games
-      <form id="view-games">
-        <fieldset>
-          <legend>View Games</legend>
-          <input type="submit" name="submit" value="View Games">
-        </fieldset>
-      </form>
-      -->
-
           <!--TicTacToe Table-->
     <div class = "x-wins">
       <h2 class="text-center">
@@ -326,7 +317,37 @@
          </section>
   </div>
 
+  <!--View Last Game Stats -->
+  <div id = "game-stats">
 
+              <p class="text-center">
+                <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+                data-target="#game-stats-modal">
+                <span class="glyphicon glyphicon-stats"></span>
+                <span style="font-weight: bold; font-size: 18px; margin-top: 10px">
+                  Last Game Stats</span>
+              </a>
+            </p>
+
+  </div>
+<!-- Game Stats Modal -->
+<div class="modal fade" id="game-stats-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Last Game</h4>
+      </div>
+      <div class="modal-body">
+      <div id = "stats-modal">
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     </body>
 </html>

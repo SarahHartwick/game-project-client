@@ -115,6 +115,14 @@ const onGames = (event) => {
 
 };
 
+const getStats = (event) => {
+  event.preventDefault();
+  api.showGames()
+  .done(ui.showStats)
+  .fail(ui.failure);
+
+};
+
 
 
 //jQuery Events
@@ -133,6 +141,8 @@ const addHandlers = () => {
   $('.o-wins').hide();
   $('.tie').hide();
   gamelogic.emptyScore();
+  $('#game-stats').hide();
+  $('#game-stats').on('click', getStats);
 };
 
 const signInOrOut = () => {
