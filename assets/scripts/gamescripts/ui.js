@@ -1,6 +1,7 @@
 'use strict';
 const app = require('./app');
 const gamelogic = require('./gamelogic');
+const api = require('./api');
 
 //Sign In/Up/Out/Password Functions
 
@@ -64,16 +65,20 @@ const gameCreated = (data) => {
   app.game.id = data.game.id;
   app.game = data.game;
   console.log(app.game.id);
+  api.showGames()
+  .done(showGames)
+  .done(showWins)
+  .fail(failure);
 
 };
 
 const playSuccess = (data) => {
-  console.log(data);
+  return data;
 
 };
 
 const gameOver = (data) => {
-  console.log(data);
+  return data;
 };
 
 const showWins = (data) => {
@@ -208,9 +213,9 @@ const showStats = (data) => {
 
 const showGames = (data) => {
   let totalGames = data.games.length;
-  $('#total-games').html('This is game #' + (totalGames + 1) + ' for ' + app.user.email + '!');
   $('.games-total').show();
   $('#game-stats').show();
+  $('#total-games').html('This is game #' + (totalGames) + ' for ' + app.user.email + '!');
 };
 
 
