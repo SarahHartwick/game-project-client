@@ -48,7 +48,6 @@ const logic = function(gameArray) {
   $('#create-game').delay( 2800 ).show('fast');
   $('#0, #1, #2, #3, #4, #5, #6, #7, #8').off('click', events.playSquare);
   api.gameOver().done(ui.gameOver).fail(ui.failure);
-  events.onGames();
   }
   else if (gameArray[0] !== undefined && gameArray[0] === gameArray[3]
     && gameArray[3] === gameArray[6]) {
@@ -66,7 +65,6 @@ const logic = function(gameArray) {
     $('#create-game').delay( 2800 ).show('fast');
     $('#0, #1, #2, #3, #4, #5, #6, #7, #8').off('click', events.playSquare);
     api.gameOver().done(ui.gameOver).fail(ui.failure);
-    events.onGames();
   }
   else if (gameArray[0] !== undefined && gameArray[0] === gameArray[4]
     && gameArray[4] === gameArray[8]) {
