@@ -548,7 +548,7 @@ webpackJsonp([0],[
 	  var totalGames = data.games.length;
 	  $('.games-total').show();
 	  $('#game-stats').show();
-	  $('#total-games').html('This is game #' + (totalGames - 1) + ' for ' + app.user.email + '!');
+	  $('#total-games').html('This is game #' + totalGames + ' for ' + app.user.email + '!');
 	};
 
 	module.exports = {
