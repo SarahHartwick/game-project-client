@@ -121,6 +121,8 @@ const showWins = (data) => {
 }
 
 const showStats = (data) => {
+  console.log("Data is .");
+  console.log(data);
   let player = '';
   let result = 0;
   let lastGame = '';
@@ -208,6 +210,9 @@ const showStats = (data) => {
   };
 
   $('#stats-modal').html('<h3><center>' + player + '</center></h3>');
+  console.log("You got last game.");
+  console.log(lastGame);
+
 };
 
 
