@@ -487,6 +487,8 @@ webpackJsonp([0],[
 	};
 
 	var showStats = function showStats(data) {
+	  console.log("Data is .");
+	  console.log(data);
 	  var player = '';
 	  var result = 0;
 	  var lastGame = '';
@@ -542,6 +544,8 @@ webpackJsonp([0],[
 	  };
 
 	  $('#stats-modal').html('<h3><center>' + player + '</center></h3>');
+	  console.log("You got last game.");
+	  console.log(lastGame);
 	};
 
 	var showGames = function showGames(data) {
